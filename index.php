@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/gotham-pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Manrope:600,800&display=swap" rel="stylesheet" />
   <link rel="shortcut icon" href="img/icon.svg" type="image/svg" />
   <title>Discounts On Services</title>
 </head>
@@ -32,6 +34,9 @@
                 </li>
               </ul>
             </li>
+            <li class="down-menu__item">
+              <a href="" class="sub-menu__down"><img src="img/down.png" alt="Sub-menu"></a>
+            </li>
             <li class="menu__item">
               <a href="" class="menu__link">FAQ</a>
             </li>
@@ -55,7 +60,13 @@
             </ul>
           </nav>
           <nav class="login-box__lang lang">
-            <ul class="lang__list">EN
+            <ul class="lang__list">
+              <li class="select">
+                <a href="" class="lang__select">EN</a>
+              </li>
+              <li class="down-menu__item">
+                <a href="" class="sub-menu__down"><img src="img/down.png" alt="Sub-menu"></a>
+              </li>
               <li class="lang__item">
                 <a href="" class="lang__link">English</a>
               </li>
