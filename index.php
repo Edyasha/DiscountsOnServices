@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
   <link rel="shortcut icon" href="img/icon.svg" type="image/svg" />
   <title>Discounts On Services</title>
 </head>
+
 <body>
   <div class="wrapper">
     <header class="header">
@@ -18,11 +20,15 @@
           <img class="logo__img" src="img/logo.png" alt="DiscountsOnServices">
           <a class="logo__link" href="">DiscountsOnServices</a>
         </div>
+        <div class="header__burger-menu burger-menu">
+          <a class="burger-menu__link" href=""><img src="img/burger-menu.png"></a>
+        </div>
         <nav class="header__menu menu">
           <ul class="menu__list">
-            <li class="menu__item">
-              <a href="" class="menu__link">Subscriptions</a>
-              <ul class="menu__list sub-menu">
+            <li class="menu__item sub-menu">
+              <a href="" class="menu-open menu__link">Subscriptions</a>
+              <span class="sub-menu__down"></span>
+              <ul class="menu-open__list">
                 <li class="sub-menu__item">
                   <a href="" class="sub-menu__link">Netflix</a>
                 </li>
@@ -33,9 +39,6 @@
                   <a href="" class="sub-menu__link">Spotify</a>
                 </li>
               </ul>
-            </li>
-            <li class="down-menu__item">
-              <a href="" class="sub-menu__down"><img src="img/down.png" alt="Sub-menu"></a>
             </li>
             <li class="menu__item">
               <a href="" class="menu__link">FAQ</a>
@@ -61,20 +64,20 @@
           </nav>
           <nav class="login-box__lang lang">
             <ul class="lang__list">
-              <li class="select">
+              <li class="lang__item">
                 <a href="" class="lang__select">EN</a>
-              </li>
-              <li class="down-menu__item">
-                <a href="" class="sub-menu__down"><img src="img/down.png" alt="Sub-menu"></a>
-              </li>
-              <li class="lang__item">
-                <a href="" class="lang__link">English</a>
-              </li>
-              <li class="lang__item">
-                <a href="" class="lang__link">Ukraine</a>
-              </li>
-              <li class="lang__item">
-                <a href="" class="lang__link">Russian</a>
+                <span class="sub-menu__down"></span>
+                <ul class="lang__open-list">
+                  <li class="lang__sub-item">
+                    <a href="" class="lang__link">English</a>
+                  </li>
+                  <li class="lang__sub-item">
+                    <a href="" class="lang__link">Ukraine</a>
+                  </li>
+                  <li class="lang__sub-item">
+                    <a href="" class="lang__link">Russian</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </nav>
@@ -87,4 +90,5 @@
   </div>
   <script src="js/script.js"></script>
 </body>
+
 </html>

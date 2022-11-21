@@ -71,25 +71,47 @@ body {
 /*----------HEADER----------*/
 .header {
   background-color: #FFFFFF;
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   top: 0;
+  z-index: 10;
 
   &__container {
     display: flex;
     justify-content: center;
-    min-height: 60px;
+    max-height: 60px;
     align-items: center;
+
+    .burger-menu {
+      &__link img {
+        width: 18px;
+        height: 16px;
+        margin: 0px 20px 0px 0px;
+      }
+
+      @media (max-width: 375px) {
+        &__link img {
+          margin: 0px 12px 0px 0px;
+        }
+      }
+    }
   }
 
   @media (max-width: 768px) {
     &__container {
       min-height: 54px;
+      justify-content: space-between;
     }
   }
 
   &__logo {}
+
+  @media (min-width: 769px) {
+    &__burger-menu {
+      display: none;
+    }
+  }
 
   &__menu {
     padding: 5px 0px;
@@ -134,6 +156,20 @@ body {
     }
   }
 
+  @media (max-width: 768px) {
+    &__img {
+      width: 32px;
+      height: 32px;
+      margin: 11px 0px 0px 17px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    &__img {
+      margin: 0px 0px 0px 9px;
+    }
+  }
+
   &__link {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
@@ -148,6 +184,12 @@ body {
       margin: 0px 0px 0px 4px;
     }
   }
+
+  @media (max-width: 375px) {
+    &__link {
+      display: none;
+    }
+  }
 }
 
 .menu {
@@ -155,6 +197,12 @@ body {
   &__list {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  &__list > li {
+    align-items: center;
+    display: flex;
+    padding: 22px 0;
   }
 
   &__item {}
@@ -175,6 +223,14 @@ body {
     line-height: calc(24 / 16 * 100%);
   }
 
+  &__link:hover {
+    color: #1749B3;
+  }
+
+  &__link:active {
+    color: #4B84FD;
+  }
+
   @media (max-width: 1210px) {
     &__link {
       font-size: 14px;
@@ -187,31 +243,89 @@ body {
   margin: 10px 0px 0px 4px;
 
   img {
-    width: 12px;
+    width: 11px;
     height: 6px;
   }
 }
 
+@media (max-width: 1210px) {
+  .down-menu__item {
+    margin: 12px 0px 0px 4px;
+  }
+}
+
 .sub-menu {
+  position: relative;
+
+  &__link {
+    color: #171717;
+    font-size: 17px;
+  }
+
+  &__link:hover {
+    color: #1749B3;
+  }
+
+  &__down {
+    display: block;
+    margin: 0px 0px 0px 4px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333333;
+    cursor: pointer;
+  }
+
+  &__down:hover {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #1749B3;
+  }
+
   @media (max-width: 1210px) {
-    &__down img {
-      width: 10px;
+    &__down {
+      margin: 2px 0px 0px 4px;
+      border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #333333;
     }
   }
 
-  @media (max-width: 920px) {
-    &__down img {
-      width: 8px;
-    }
-  }
-
-  &__item {
-    // opacity: 0;
-    display: none;
-    // max-width: 0px;
-  }
+  &__item {}
 
   &__link {}
+}
+
+.menu-open {
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: -12%;
+    padding: 15px;
+    background-color: #FFFFFF;
+    min-width: 200px;
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+
+    li {
+      margin: 0px 0px 10px 0px;
+    }
+
+    li:last-child {
+      margin: 0;
+    }
+  }
+
+  .sub-menu:hover &__list{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+  }
 }
 
 .login-box {
@@ -256,8 +370,20 @@ body {
     border-radius: 12px;
     background: #1749B3;
     color: #FFFFFF;
+    cursor: pointer;
     line-height: normal;
     margin: 0px 0px 0px 66px;
+  }
+
+  &__login:hover {
+    background: #FFFFFF;
+    color: #171717;
+    border: 1px solid #1749B3;
+  }
+
+  &__login:active {
+    background: #4B84FD;;
+    color: #FFFFFF;;
   }
 
   @media (max-width: 1210px) {
@@ -315,10 +441,37 @@ body {
 
 .lang {
 
+  &__item {
+    position: relative;
+    padding: 0px 0px 22px 0px;
+  }
+
+  &__item:not(:last-child) {
+    margin: 0px 0px 10px 0px;
+  }
+
+  &__item:hover &__open-list {
+    position: absolute;
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    pointer-events: all;
+  }
+
   &__select {
     color: #333333;
     width: 24px;
     height: 24px;
+  }
+
+  &__select:hover {
+    color: #1749B3;
+  }
+
+  &__select > li {
+    display: flex;
+    align-items: center;
   }
 
   @media (max-width: 1210px) {
@@ -330,17 +483,38 @@ body {
   }
 
   &__list {
-    display: flex;
     width: 24px;
     height: 24px;
     line-height: calc(24 / 16 * 100%);
   }
 
-  &__item {
-    display: none;
+  &__list > li {
+    display: flex;
+    align-items: center;
   }
 
-  &__link {}
+  &__open-list {
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    min-width: 100px;
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__link {
+    color: #171717;
+    font-size: 17px;
+  }
+
+  &__link:hover {
+    color: #1749B3;
+  }
 }
 
 /*----------HEADER END----------*/
