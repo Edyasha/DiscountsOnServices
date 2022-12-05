@@ -85,7 +85,45 @@
         </div>
       </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <div class="main-container bounding-box">
+        <section class="main-container__box left-box">
+          <h1>Start enjoying a benefit of up to 50%</h1>
+          <p>You have always wanted to get the same product at a special price for you, without haggling - and it is yours.</p>
+          <button><p>Start using</p></button>
+        </section>
+        <section class="main-container__box right-box">
+          <div class="right-box__img"></div>
+        </section>
+      </div>
+      <div class="subscription bounding-box">
+        <h2 id="subscription-title">Choose a subscription</h2>
+        <section class="subscription__box netflix">
+          <div class="netflix__info">
+            <h2>Netflix subscription rates</h2>
+            <p>The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.</p>
+            <button><p>Learn more</p></button>
+          </div>
+          <div class="netflix__logo"><img src="img/netflix-logo.jpg" class="netflix__logo-img"></div>
+        </section>
+        <section class="subscription__box spotify">
+          <div class="spotify__info">
+            <h2>Spotify Premium</h2>
+            <p>The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.</p>
+            <button><p>Learn more</p></button>
+          </div>
+          <div class="spotify__logo"><img src="img/spotify-logo.jpg" class="spotify__logo-img"></div>
+        </section>
+        <section class="subscription__box youtube">
+          <div class="youtube__info">
+            <h2>YouTube Premium</h2>
+            <p>The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.</p>
+            <button><p>Learn more</p></button>
+          </div>
+          <div class="youtube__logo"><img src="img/youtube-logo.jpg" class="youtube__logo-img"></div>
+        </section>
+      </div>
+    </main>
     <footer class="footer"></footer>
   </div>
   <script src="js/script.js"></script>
